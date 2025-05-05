@@ -1,17 +1,17 @@
 {
     "Routes": [
-        {
-            "UpstreamPathTemplate": "/users/{everything}",
-            "UpstreamHttpMethod": [ "Post" ],
-            "DownstreamPathTemplate": "/api/users/{everything}",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-                {
-                    "Host": "localhost",
-                    "Port": 5279
-                }
-            ]
-        },
+        //{
+        //    "UpstreamPathTemplate": "/users/{everything}",
+        //    "UpstreamHttpMethod": [ "Post" ],
+        //    "DownstreamPathTemplate": "/api/users/{everything}",
+        //    "DownstreamScheme": "http",
+        //    "DownstreamHostAndPorts": [
+        //        {
+        //            "Host": "localhost",
+        //            "Port": 5279
+        //        }
+        //    ]
+        //},
         {
             "UpstreamPathTemplate": "/products/{everything}",
             "UpstreamHttpMethod": [ "Get", "Post" ],
@@ -22,19 +22,27 @@
                     "Host": "localhost",
                     "Port": 5039
                 }
-            ]
+            ],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "BasicAuthentication",
+                 "AllowedScopes": []
+            }
         },
         {
             "UpstreamPathTemplate": "/cart/{everything}",
             "UpstreamHttpMethod": [ "Get", "Post" ],
-            "DownstreamPathTemplate": "api/cart/{everything}",
+            "DownstreamPathTemplate": "/api/cart/{everything}",
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
                     "Host": "localhost",
                     "Port": 5201
                 }
-            ]
+            ],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "BasicAuthentication",
+                "AllowedScopes": []
+            }
         },
         {
             "UpstreamPathTemplate": "/orders/{everything}",
@@ -46,7 +54,11 @@
                     "Host": "localhost",
                     "Port": 5071
                 }
-            ]
+            ],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "BasicAuthentication",
+                "AllowedScopes": []
+            }
         }
     ],
     "GlobalConfiguration": {
