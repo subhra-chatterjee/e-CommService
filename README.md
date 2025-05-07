@@ -33,4 +33,7 @@ Cart Service:
 URL: http://localhost:5201/api/cart
 
 Order Service:
-URL: http://localhost:5003/api/orders
+URL: http://localhost:5071/api/orders
+
+
+
