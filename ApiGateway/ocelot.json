@@ -19,7 +19,7 @@
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "products-service",
                     "Port": 5039
                 }
             ],
@@ -35,7 +35,7 @@
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "cart-service",
                     "Port": 5201
                 }
             ],
@@ -51,7 +51,7 @@
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "orders-service",
                     "Port": 5071
                 }
             ],

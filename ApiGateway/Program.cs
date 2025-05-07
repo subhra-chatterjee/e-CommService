@@ -8,6 +8,7 @@ using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.WebHost.UseUrls("http://+:5005");
 
 // Add services to the container.
 
@@ -37,7 +38,7 @@ if (app.Environment.IsDevelopment())
 }
 // Use Ocelot middleware
 app.UseOcelot().Wait();
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 

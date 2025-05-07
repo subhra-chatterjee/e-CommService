@@ -1,0 +1,50 @@
+version: "3.8"
+
+services:
+  api-gateway:
+    image: apigateway
+    build:
+      context: ./apigateway
+      dockerfile: Dockerfile
+    ports:
+      - "5005:5005"
+    depends_on:
+      - products-service
+      - cart-service
+      - orders-service
+    networks:
+      - microservices-net
+
+  products-service:
+    image: productservice
+    build:
+      context: ./productservice
+      dockerfile: Dockerfile
+    ports:
+      - "5039:5039"
+    networks:
+      - microservices-net
+
+  cart-service:
+    image: cartservice
+    build:
+      context: ./cartservice
+      dockerfile: Dockerfile
+    ports:
+      - "5201:5201"
+    networks:
+      - microservices-net
+
+  orders-service:
+    image: orderservice
+    build:
+      context: .
+      dockerfile: OrderService/Dockerfile
+    ports:
+      - "5071:5071"
+    networks:
+      - microservices-net
+
+networks:
+  microservices-net:
+    driver: bridge
