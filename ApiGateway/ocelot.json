@@ -1,17 +1,6 @@
 {
     "Routes": [
-        //{
-        //    "UpstreamPathTemplate": "/users/{everything}",
-        //    "UpstreamHttpMethod": [ "Post" ],
-        //    "DownstreamPathTemplate": "/api/users/{everything}",
-        //    "DownstreamScheme": "http",
-        //    "DownstreamHostAndPorts": [
-        //        {
-        //            "Host": "localhost",
-        //            "Port": 5279
-        //        }
-        //    ]
-        //},
+        
         {
             "UpstreamPathTemplate": "/products/{everything}",
             "UpstreamHttpMethod": [ "Get", "Post" ],

@@ -14,11 +14,11 @@ public class OrderController : ControllerBase
         try
         {
             var allAvailable = order.orderItem.All(item => item.InStock);
-
-            var success = allAvailable && MockPayment();
+            var isPayment = true;//defualt set true.
+            var success = allAvailable && MockPayment(isPayment);
 
             var status = success ? "Confirmed" : "Cancelled";
-            _logger.LogInformation("Order placed successfully.", status);
+            _logger.LogInformation("Order Placed Successfully Done.Order status: {status}", status);
             return Ok(new { Status = status });
         }
         catch (Exception ex)
@@ -31,9 +31,20 @@ public class OrderController : ControllerBase
 
 
 
-    private bool MockPayment()
+    private bool MockPayment(bool ispayment)
     {
-        return true;
+        if(ispayment)
+        {
+            _logger.LogInformation("Payment successfully done. Payment status: {IsPayment}", ispayment);
+
+            return true;
+        }
+        else
+        {
+            _logger.LogError("Payment Decline . Payment status: {IsPayment}", ispayment);
+            return false;
+        }
+            
     }
 
 }
