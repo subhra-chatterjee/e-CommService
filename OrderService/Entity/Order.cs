@@ -5,7 +5,7 @@ namespace OrderService.Entity
 {
     public class Order
     {
-        public List<CartItem> orderItem { get; set; }
+        public List<CartItem?>? orderItem { get; set; }
 
     }
 }
