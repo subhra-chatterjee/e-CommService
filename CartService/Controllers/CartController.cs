@@ -15,7 +15,7 @@ public class CartController : ControllerBase
         try
         {
             Cart.Add(item);
-            _logger.LogInformation("Product added to cart.",item.ProductName);
+            _logger.LogInformation("Product added to cart.Product Name:{ProductName}", item.ProductName);
             return Ok("Product added to cart.");
         }
         catch (Exception ex)
@@ -28,6 +28,7 @@ public class CartController : ControllerBase
     [HttpGet]
     public IActionResult GetCart()
     {
+        _logger.LogInformation("Get All cart Item");
         return Ok(Cart);
     }
 }
