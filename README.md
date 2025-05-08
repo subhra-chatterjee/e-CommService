@@ -36,4 +36,14 @@ Order Service:
 URL: http://localhost:5071/api/orders
 
 
+Docker File :
+
+Step 1: Run docker-compose up --build
+Step 2: Run docker-compose up
+
+
+Gatway Endpoint:
+Collection  attach in Repo file.
+
+
 
